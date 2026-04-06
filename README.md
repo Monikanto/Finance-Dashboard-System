@@ -37,7 +37,11 @@ A production-ready REST API for a Finance Dashboard built with **TypeScript**, *
 
 -  **JWT Authentication** — Signup, login, and token-based auth
 -  **Role-Based Access Control** — VIEWER, ANALYST, and ADMIN roles
+<<<<<<< HEAD
 - **Dashboard Analytics** — Income/expense summaries, category breakdowns, monthly trends
+=======
+-  **Dashboard Analytics** — Income/expense summaries, category breakdowns, monthly trends
+>>>>>>> c4d1617c0e99855b93f46ecdebbeb7fe94df13d5
 -  **Financial Records** — Full CRUD with filtering, pagination, and sorting
 -  **Input Validation** — Request validation via Zod schemas
 -  **Soft Deletes** — Records and users are soft-deleted (recoverable)
@@ -286,7 +290,7 @@ Authenticate and receive a JWT token.
 
 ### Users (Admin Only)
 
-> 🔒 All user management endpoints require **ADMIN** role.
+>  All user management endpoints require **ADMIN** role.
 
 #### `GET /api/users`
 
