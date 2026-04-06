@@ -28,14 +28,14 @@ A production-ready REST API for a Finance Dashboard built with **TypeScript**, *
 
 ## Features
 
-- 🔐 **JWT Authentication** — Signup, login, and token-based auth
-- 👥 **Role-Based Access Control** — VIEWER, ANALYST, and ADMIN roles
-- 📊 **Dashboard Analytics** — Income/expense summaries, category breakdowns, monthly trends
-- 💳 **Financial Records** — Full CRUD with filtering, pagination, and sorting
-- 🛡️ **Input Validation** — Request validation via Zod schemas
-- 🗑️ **Soft Deletes** — Records and users are soft-deleted (recoverable)
-- ⚡ **Rate Limiting** — API rate limiting to prevent abuse
-- 🔒 **Security** — Helmet headers, CORS, bcrypt password hashing
+-  **JWT Authentication** — Signup, login, and token-based auth
+-  **Role-Based Access Control** — VIEWER, ANALYST, and ADMIN roles
+-  **Dashboard Analytics** — Income/expense summaries, category breakdowns, monthly trends
+-  **Financial Records** — Full CRUD with filtering, pagination, and sorting
+-  **Input Validation** — Request validation via Zod schemas
+-  **Soft Deletes** — Records and users are soft-deleted (recoverable)
+-  **Rate Limiting** — API rate limiting to prevent abuse
+-  **Security** — Helmet headers, CORS, bcrypt password hashing
 
 ---
 
@@ -130,7 +130,7 @@ cp .env.example .env
 | `PORT` | Server port | `3000` |
 | `NODE_ENV` | Environment mode | `development` |
 
-> ⚠️ **Important:** Change `JWT_SECRET` to a strong, unique value in production.
+>  **Important:** Change `JWT_SECRET` to a strong, unique value in production.
 
 ### Database Setup
 
@@ -279,7 +279,7 @@ Authenticate and receive a JWT token.
 
 ### Users (Admin Only)
 
-> 🔒 All user management endpoints require **ADMIN** role.
+>  All user management endpoints require **ADMIN** role.
 
 #### `GET /api/users`
 
@@ -384,8 +384,8 @@ Soft-delete a user (sets `deletedAt` and `isActive = false`).
 
 ### Financial Records
 
-> 🔒 **Read** endpoints require authentication (any role).
-> 🔒 **Write** endpoints (create, update, delete) require **ADMIN** role.
+>  **Read** endpoints require authentication (any role).
+>  **Write** endpoints (create, update, delete) require **ADMIN** role.
 > Non-admin users can only see their own records.
 
 #### `POST /api/records`
@@ -511,8 +511,8 @@ Soft-delete a record. *Admin only.*
 
 ### Dashboard Analytics
 
-> 🔒 **Summary** — accessible by all authenticated roles.
-> 🔒 **All other endpoints** — require **ANALYST** or **ADMIN** role.
+>  **Summary** — accessible by all authenticated roles.
+>  **All other endpoints** — require **ANALYST** or **ADMIN** role.
 > Admins see all data; other roles see only their own.
 
 #### `GET /api/dashboard/summary`
