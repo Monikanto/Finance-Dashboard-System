@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const createRecordSchema = z.object({
   amount: z.number().positive('Amount must be positive'),
   type: z.enum(['INCOME', 'EXPENSE'], {
-    errorMap: () => ({ message: 'Type must be INCOME or EXPENSE' }),
+    error: 'Type must be INCOME or EXPENSE',
   }),
   category: z.string().min(1, 'Category is required').max(50),
   date: z.string().refine((d) => !isNaN(Date.parse(d)), {

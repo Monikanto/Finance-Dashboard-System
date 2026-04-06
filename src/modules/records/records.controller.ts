@@ -26,7 +26,7 @@ export class RecordsController {
 
   static getById = catchAsync(async (req: Request, res: Response) => {
     const isAdmin = req.user!.role === 'ADMIN';
-    const record = await RecordsService.getById(req.params.id, req.user!.id, isAdmin);
+    const record = await RecordsService.getById(req.params.id as string, req.user!.id, isAdmin);
 
     sendSuccess(res, 200, {
       message: 'Record retrieved successfully',
@@ -35,7 +35,7 @@ export class RecordsController {
   });
 
   static update = catchAsync(async (req: Request, res: Response) => {
-    const record = await RecordsService.update(req.params.id, req.user!.id, req.body);
+    const record = await RecordsService.update(req.params.id as string, req.user!.id, req.body);
 
     sendSuccess(res, 200, {
       message: 'Record updated successfully',
@@ -45,7 +45,7 @@ export class RecordsController {
 
   static delete = catchAsync(async (req: Request, res: Response) => {
     const isAdmin = req.user!.role === 'ADMIN';
-    const result = await RecordsService.delete(req.params.id, req.user!.id, isAdmin);
+    const result = await RecordsService.delete(req.params.id as string, req.user!.id, isAdmin);
 
     sendSuccess(res, 200, {
       message: result.message,

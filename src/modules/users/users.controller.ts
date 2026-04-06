@@ -15,7 +15,7 @@ export class UsersController {
   });
 
   static getById = catchAsync(async (req: Request, res: Response) => {
-    const user = await UsersService.getById(req.params.id);
+    const user = await UsersService.getById(req.params.id as string);
 
     sendSuccess(res, 200, {
       message: 'User retrieved successfully',
@@ -24,7 +24,7 @@ export class UsersController {
   });
 
   static update = catchAsync(async (req: Request, res: Response) => {
-    const user = await UsersService.update(req.params.id, req.body);
+    const user = await UsersService.update(req.params.id as string, req.body);
 
     sendSuccess(res, 200, {
       message: 'User updated successfully',
@@ -33,7 +33,7 @@ export class UsersController {
   });
 
   static delete = catchAsync(async (req: Request, res: Response) => {
-    const result = await UsersService.delete(req.params.id);
+    const result = await UsersService.delete(req.params.id as string);
 
     sendSuccess(res, 200, {
       message: result.message,
